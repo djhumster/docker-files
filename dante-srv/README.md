@@ -11,6 +11,7 @@ network connectivity.
 **changes:**
 - debian stretch-slim instead of jessie
 - required username authentication
+- fix dante package checksum
 
 ## docker-compose
 
