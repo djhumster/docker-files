@@ -17,23 +17,25 @@ network connectivity.
 
 ```
 dante:
-  image: djhumster/dante
+  image: djhumster/dante-srv
   ports:
     - "1080:1080"
   volumes:
     - ./sockd.conf:/etc/sockd.conf
-  restart: always
+  restart: until-stopped
 ```
 
 ## up and running
 
 ```
 $ docker-compose up -d
+# or
+$ docker run -d -p 1080:1080 --restart until-stopped --name dante djhumster/dante-srv
 
 # Required username authentication.
 $ docker exec -it dante_dante_1 bash
 >>> useradd -M -N -s /bin/false username
->>> echo username:password | chpasswd -c SHA256
+>>> passwd username
 >>> exit
 
 $ curl -x socks5://username:password@127.0.0.1:1080 https://ya.ru
