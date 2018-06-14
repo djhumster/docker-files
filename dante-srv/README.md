@@ -30,7 +30,7 @@ dante:
 ```
 $ docker-compose up -d
 # or
-$ docker run -d -p 1080:1080 --restart until-stopped --name dante djhumster/dante-srv
+$ docker run -d -p 1080:1080 --restart unless-stopped --name dante djhumster/dante-srv
 
 # Required username authentication.
 $ docker exec -it dante_dante_1 bash

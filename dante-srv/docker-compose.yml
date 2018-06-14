@@ -4,4 +4,4 @@ dante:
     - "1080:1080"
   volumes:
     - ./sockd.conf:/etc/sockd.conf
-  restart: until-stopped
+  restart: unless-stopped
