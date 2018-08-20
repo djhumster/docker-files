@@ -1,7 +1,7 @@
 #
 # Dockerfile for jupyter notebook
 #
-FROM python:3.6-slim-stretch
+FROM python:slim-stretch
 
 ENV JUPYTER_PORT=8888
 
